@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -10,14 +9,11 @@ import { Text } from './ContactList/ContactList.styled';
 function App() {
   const contacts = useSelector(getContacts);
 
-  useEffect(() => {
-    localStorage.setItem('CONTACTS', JSON.stringify(contacts));
-  }, [contacts]);
-
   return (
     <Box>
       <Phonebook>
         <Title>Phonebook</Title>
+
         <ContactForm />
 
         {contacts.length > 0 ? (
